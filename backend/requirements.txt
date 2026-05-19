@@ -1,0 +1,3 @@
+# The initial backend uses Python standard library only.
+# Flask can be added later if a richer API framework is needed.
+
