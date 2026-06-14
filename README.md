@@ -1,68 +1,67 @@
-# OpenWrt Network Application Lab
+# OpenWrt 网络应用实验
 
-This project is for Experiment 2: network application development based on OpenWrt.
+本项目为实验二：基于 OpenWrt 的网络应用程序开发。
 
-It contains a C/libpcap traffic monitor, a lightweight HTTP backend, a web frontend,
-firewall management scripts, and experiment notes for AI-assisted development records.
+项目包含一个基于 C/libpcap 的流量监控器、一个轻量级 HTTP 后端、一个 Web 前端、
+防火墙管理脚本，以及用于 AI 辅助开发记录的实验笔记。
 
-## Directory Structure
+## 目录结构
 
 ```text
 .
-├── traffic_monitor/        # C/libpcap traffic monitor
-├── backend/                # HTTP API service
-├── frontend/               # Web UI for traffic and firewall modules
-├── scripts/                # OpenWrt firewall rule scripts
-└── report_notes/           # AI prompts, setup notes, test records, screenshots
+├── traffic_monitor/        # C/libpcap 流量监控器
+├── backend/                # HTTP API 服务
+├── frontend/               # 流量监控与防火墙模块的 Web 界面
+├── scripts/                # OpenWrt 防火墙规则脚本
+└── report_notes/           # AI 提示词、环境配置记录、测试记录、截图
 ```
 
-## Modules
+## 各模块说明
 
 ### traffic_monitor
 
-Captures packets on an OpenWrt network interface, parses IP traffic, calculates flow
-statistics, prints command-line output, and writes real-time JSON data to
-`/tmp/traffic_stats.json`.
+在 OpenWrt 网络接口上捕获数据包，解析 IP 流量，计算流（flow）统计数据，
+在命令行中打印实时输出，并将 JSON 数据写入 `/tmp/traffic_stats.json`。
 
 ### backend
 
-Provides HTTP APIs for the frontend:
+为前端提供 HTTP API：
 
-- `GET /api/traffic`: read traffic statistics from `/tmp/traffic_stats.json`.
-- `POST /api/firewall/add`: add a firewall rule.
-- `GET /api/firewall/list`: list experiment firewall rules.
-- `POST /api/firewall/delete`: delete a rule.
-- `POST /api/firewall/clear`: clear experiment firewall rules.
+- `GET /api/traffic`：从 `/tmp/traffic_stats.json` 读取流量统计数据。
+- `POST /api/firewall/add`：新增一条防火墙规则。
+- `GET /api/firewall/list`：列出实验相关的防火墙规则。
+- `POST /api/firewall/delete`：删除一条规则。
+- `POST /api/firewall/clear`：清空实验相关的防火墙规则。
 
 ### frontend
 
-Displays traffic statistics and provides a firewall rule configuration page.
+展示流量统计数据，并提供防火墙规则配置页面。
 
 ### scripts
 
-Contains shell scripts called by the backend to manage firewall rules on OpenWrt.
+包含后端调用的 shell 脚本，用于在 OpenWrt 上管理防火墙规则。
 
 ### report_notes
 
-Stores the experiment process and AI interaction records required by the lab report.
+存放实验过程记录和 AI 交互记录，供实验报告使用。
 
-## Suggested Development Order
+## 建议开发顺序
 
-1. Finish OpenWrt VM network and SSH setup.
-2. Implement and test the command-line C traffic monitor.
-3. Add JSON output to the traffic monitor.
-4. Implement backend traffic API.
-5. Implement traffic monitor web page.
-6. Implement firewall shell script.
-7. Implement firewall backend APIs.
-8. Implement firewall web page.
-9. Write README, lab report notes, and demo video script.
+1. 完成 OpenWrt 虚拟机的网络和 SSH 配置。
+2. 实现并测试命令行 C 流量监控器。
+3. 为流量监控器添加 JSON 输出。
+4. 实现后端流量 API。
+5. 实现流量监控 Web 页面。
+6. 实现防火墙 shell 脚本。
+7. 实现防火墙后端 API。
+8. 实现防火墙 Web 页面。
+9. 编写 README、实验报告笔记和演示视频脚本。
 
-## Build And Run
+## 构建与运行
 
-Detailed commands will be added as each module is implemented.
+各模块的详细命令将在实现过程中逐步补充。
 
-For the C module:
+C 模块：
 
 ```sh
 cd traffic_monitor
@@ -70,12 +69,11 @@ make
 ./traffic_monitor br-lan
 ```
 
-For the backend:
+后端：
 
 ```sh
 cd backend
 python3 app.py
 ```
 
-For the frontend, open `frontend/index.html` or serve it through the backend.
-
+前端：直接打开 `frontend/index.html`，或通过后端服务托管。

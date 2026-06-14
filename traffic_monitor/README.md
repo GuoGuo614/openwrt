@@ -1,78 +1,75 @@
-# Traffic Monitor
+# 流量监控器
 
-This module contains the C/libpcap traffic monitor.
+本模块包含基于 C/libpcap 的流量监控程序。
 
-## Planned Features
+## 已实现功能
 
-- Capture IPv4 packets from a selected interface.
-- Parse source IP, destination IP, protocol, and packet length.
-- Aggregate traffic by flow.
-- Show command-line statistics once per second.
-- Calculate total traffic, peak rate, and recent average rates.
-- Write JSON output to `/tmp/traffic_stats.json` for the backend.
+- 从指定网络接口捕获 IPv4 数据包。
+- 解析源 IP、目的 IP、协议类型和数据包长度。
+- 按流（flow）聚合流量数据。
+- 每秒刷新命令行统计信息。
+- 计算累计流量、峰值速率和近期平均速率。
+- 将 JSON 输出写入 `/tmp/traffic_stats.json`，供后端读取。
 
-## Files
+## 文件说明
 
-- `traffic_monitor.c`: main C source file.
-- `Makefile`: build script for OpenWrt/Linux.
-- `sample_output.md`: records command-line output examples for the report.
+- `traffic_monitor.c`：C 主程序源文件。
+- `Makefile`：面向 OpenWrt/Linux 的构建脚本。
+- `sample_output.md`：记录命令行输出示例，用于实验报告。
 
-## Build
+## 构建
 
-Install dependencies on a Linux development environment:
+在 Linux 开发环境中安装依赖：
 
 ```sh
 sudo apt update
 sudo apt install build-essential libpcap-dev
 ```
 
-If compiling directly on OpenWrt, install the available build tools and libpcap
-packages first:
+如果直接在 OpenWrt 上编译，需要先安装可用的构建工具和 libpcap 包：
 
 ```sh
 opkg update
 opkg install gcc make libpcap
 ```
 
-For constrained OpenWrt images, cross-compilation with the OpenWrt SDK is preferred.
+对于资源受限的 OpenWrt 镜像，建议使用 OpenWrt SDK 进行交叉编译。
 
 ```sh
 make
 ```
 
-## Run
+## 运行
 
-List interfaces:
+查看网络接口列表：
 
 ```sh
 ip link
 ```
 
-Run the monitor:
+运行监控器：
 
 ```sh
 ./traffic_monitor br-lan
 ```
 
-The default JSON output path is `/tmp/traffic_stats.json`. You can also pass a
-custom path:
+默认 JSON 输出路径为 `/tmp/traffic_stats.json`。你也可以指定自定义路径：
 
 ```sh
 ./traffic_monitor br-lan /tmp/traffic_stats.json
 ```
 
-Generate test traffic in another SSH session:
+在另一个 SSH 会话中生成测试流量：
 
 ```sh
 ping -c 4 openwrt.org
 wget -O /tmp/test.html http://example.com
 ```
 
-Check JSON output:
+查看 JSON 输出：
 
 ```sh
 cat /tmp/traffic_stats.json
 ```
 
-The program writes to a temporary file first and then renames it to the final
-JSON path, so the backend will not read a half-written JSON document.
+程序先写入临时文件，再重命名为最终 JSON 路径，因此后端不会读取到写入一半的 JSON 文档。

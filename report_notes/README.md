@@ -1,14 +1,12 @@
-# Report Notes
+# 实验报告笔记
 
-Use this directory to keep records for the lab report.
+请使用本目录保存实验报告所需的各类记录。
 
-Recommended rule: every important AI prompt, command, screenshot, and troubleshooting
-step should be recorded here shortly after it happens.
+建议规则：每一条重要的 AI 提示词、命令、截图和排查步骤，都应在操作后尽快记录在此处。
 
-## Files
+## 文件说明
 
-- `ai_prompts.md`: AI interaction records.
-- `setup_record.md`: OpenWrt installation and network setup records.
-- `test_record.md`: module test records.
-- `screenshots.md`: screenshot index and captions.
-
+- `ai_prompts.md`：AI 交互记录。
+- `setup_record.md`：OpenWrt 安装与网络配置记录。
+- `test_record.md`：各模块测试记录。
+- `screenshots.md`：截图索引与说明。

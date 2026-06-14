@@ -1,12 +1,10 @@
-# Traffic Monitor Sample Output
+# 流量监控器输出示例
 
-Paste terminal screenshots or copied text here after testing the command-line traffic
-monitor on OpenWrt.
+在 OpenWrt 上测试命令行流量监控器后，将终端截图或复制的文本粘贴到此处。
 
-Example records to keep:
+建议记录以下内容：
 
-- Interface name.
-- Test command, such as `ping -c 4 openwrt.org`.
-- Observed source/destination IP addresses.
-- Total bytes and rate changes.
-
+- 网络接口名称。
+- 测试命令，例如 `ping -c 4 openwrt.org`。
+- 观察到的源/目的 IP 地址。
+- 累计流量和速率变化。

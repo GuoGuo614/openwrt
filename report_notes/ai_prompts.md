@@ -1,37 +1,36 @@
-# AI Prompt Records
+# AI 提示词记录
 
-## Record Template
+## 记录模板
 
 ```text
-Time:
-Purpose:
-Prompt:
-AI Response Summary:
-Adopted Content:
-Manual Changes:
-Test Result:
-Evaluation:
+时间：
+目的：
+提示词：
+AI 回复摘要：
+采纳内容：
+手动修改：
+测试结果：
+评价：
 ```
 
-## Records
+## 记录列表
 
-### 1. Project Skeleton
+### 1. 项目骨架搭建
 
-Time:
+时间：
 
-Purpose:
-Create the initial project structure for the OpenWrt network application lab.
+目的：
+为 OpenWrt 网络应用实验创建初始项目结构。
 
-Prompt:
+提示词：
 请帮我创建本实验的项目骨架，要求包含 traffic_monitor、backend、frontend、scripts、README.md 和 report_notes。
 
-AI Response Summary:
+AI 回复摘要：
 
-Adopted Content:
+采纳内容：
 
-Manual Changes:
+手动修改：
 
-Test Result:
+测试结果：
 
-Evaluation:
-
+评价：

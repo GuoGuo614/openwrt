@@ -1,8 +1,8 @@
-# Backend
+# 后端
 
-This module provides HTTP APIs for the frontend.
+本模块为前端提供 HTTP API。
 
-## Planned APIs
+## 规划的 API
 
 - `GET /api/traffic`
 - `POST /api/firewall/add`
@@ -10,15 +10,14 @@ This module provides HTTP APIs for the frontend.
 - `POST /api/firewall/delete`
 - `POST /api/firewall/clear`
 
-## Files
+## 文件说明
 
-- `app.py`: HTTP service entry point.
-- `config.py`: shared paths and configuration.
-- `requirements.txt`: Python dependencies for local development.
+- `app.py`：HTTP 服务入口。
+- `config.py`：共享路径与配置。
+- `requirements.txt`：本地开发的 Python 依赖。
 
-## Run
+## 运行
 
 ```sh
 python3 app.py
 ```
-

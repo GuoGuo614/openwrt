@@ -1,13 +1,13 @@
-# Firewall Scripts
+# 防火墙脚本
 
-This directory contains scripts called by the backend to manage OpenWrt firewall rules.
+本目录包含后端调用的脚本，用于管理 OpenWrt 防火墙规则。
 
-## Files
+## 文件说明
 
-- `firewall.sh`: unified command-line entry for add/list/delete/clear operations.
-- `firewall_rules.conf`: reserved record file for experiment-managed rules if needed.
+- `firewall.sh`：统一的命令行入口，支持 add / list / delete / clear 操作。
+- `firewall_rules.conf`：预留的实验管理规则记录文件（按需使用）。
 
-## Planned Commands
+## 规划的命令
 
 ```sh
 ./firewall.sh add tcp 0.0.0.0/0 8.8.8.8 80 reject
@@ -15,4 +15,3 @@ This directory contains scripts called by the backend to manage OpenWrt firewall
 ./firewall.sh delete 1
 ./firewall.sh clear
 ```
-

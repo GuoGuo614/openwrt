@@ -1,16 +1,16 @@
-# OpenWrt Setup Record
+# OpenWrt 环境配置记录
 
-## VM Information
+## 虚拟机信息
 
-- Virtualization software:
-- OpenWrt image filename:
-- Disk conversion command:
-- Network mode:
-- OpenWrt IP:
-- Gateway:
-- DNS:
+- 虚拟化软件：
+- OpenWrt 镜像文件名：
+- 磁盘格式转换命令：
+- 网络模式：
+- OpenWrt IP 地址：
+- 网关：
+- DNS：
 
-## Commands
+## 常用命令
 
 ```sh
 ip addr
@@ -18,7 +18,6 @@ ip route
 ping -c 4 openwrt.org
 ```
 
-## Problems And Solutions
+## 遇到的问题与解决方案
 
-Record network, SSH, DNS, and file transfer problems here.
-
+在此记录网络、SSH、DNS 和文件传输等方面遇到的问题及解决过程。

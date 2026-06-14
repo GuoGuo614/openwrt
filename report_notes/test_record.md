@@ -1,32 +1,31 @@
-# Test Record
+# 测试记录
 
-## Traffic Monitor
+## 流量监控器
 
-- Build command:
-- Run command:
-- Test traffic command:
-- Expected result:
-- Actual result:
+- 构建命令：
+- 运行命令：
+- 测试流量命令：
+- 预期结果：
+- 实际结果：
 
-## Backend API
+## 后端 API
 
-- Start command:
-- API test command:
-- Expected result:
-- Actual result:
+- 启动命令：
+- API 测试命令：
+- 预期结果：
+- 实际结果：
 
-## Frontend
+## 前端
 
-- Access URL:
-- Expected result:
-- Actual result:
+- 访问 URL：
+- 预期结果：
+- 实际结果：
 
-## Firewall
+## 防火墙
 
-- Add rule command/API:
-- List rule command/API:
-- Delete rule command/API:
-- Clear rule command/API:
-- Rule validation method:
-- Actual result:
-
+- 新增规则命令/API：
+- 查看规则命令/API：
+- 删除规则命令/API：
+- 清空规则命令/API：
+- 规则验证方法：
+- 实际结果：

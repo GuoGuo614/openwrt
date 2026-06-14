@@ -1,8 +1,7 @@
-# Screenshot Index
+# 截图索引
 
-Use this file to describe screenshots used in the lab report.
+请在此文件中描述实验报告中使用的截图。
 
-| No. | File Name | Description |
+| 编号 | 文件名 | 说明 |
 | --- | --- | --- |
 | 1 |  |  |
-
