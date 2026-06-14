@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OpenWrt 网络实验</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- Chart.js 轻量图表库，CDN 引入，无需本地安装 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <header class="topbar">
@@ -16,11 +18,24 @@
   </header>
 
   <main>
+    <!-- ========== 流量监控页面 ========== -->
     <section id="trafficView" class="view active">
       <div class="section-head">
         <h2>实时流量</h2>
         <span id="trafficStatus">等待连接</span>
       </div>
+
+      <!-- 发送速率图 -->
+      <div class="chart-container">
+        <canvas id="sendChart"></canvas>
+      </div>
+
+      <!-- 接收速率图 -->
+      <div class="chart-container">
+        <canvas id="recvChart"></canvas>
+      </div>
+
+      <!-- 流量表格 -->
       <table>
         <thead>
           <tr>
@@ -42,6 +57,7 @@
       </table>
     </section>
 
+    <!-- ========== 防火墙配置页面 ========== -->
     <section id="firewallView" class="view">
       <div class="section-head">
         <h2>防火墙规则</h2>
@@ -87,4 +103,3 @@
   <script src="js/firewall.js"></script>
 </body>
 </html>
-
