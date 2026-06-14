@@ -63,6 +63,8 @@
         <h2>防火墙规则</h2>
         <span id="firewallStatus">未执行操作</span>
       </div>
+
+      <!-- 新增规则表单 -->
       <form id="firewallForm">
         <label>
           协议
@@ -93,9 +95,36 @@
             <option value="drop">drop</option>
           </select>
         </label>
-        <button type="submit">新增规则</button>
+        <div class="btn-group">
+          <button type="submit">新增规则</button>
+          <button type="button" id="listRulesBtn">查看规则</button>
+          <button type="button" id="clearRulesBtn" class="danger">清空规则</button>
+        </div>
       </form>
-      <pre id="firewallOutput">规则列表将在这里显示。</pre>
+
+      <!-- 规则列表 -->
+      <div id="rulesListContainer">
+        <h3>当前规则列表</h3>
+        <table id="rulesTable" class="rules-table">
+          <thead>
+            <tr>
+              <th>编号</th>
+              <th>数据包</th>
+              <th>流量</th>
+              <th>目标</th>
+              <th>协议</th>
+              <th>详情</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="rulesTableBody">
+            <tr><td colspan="7">点击"查看规则"加载</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 执行结果 -->
+      <pre id="firewallOutput"></pre>
     </section>
   </main>
 

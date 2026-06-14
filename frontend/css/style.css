@@ -144,7 +144,59 @@ pre {
 }
 
 /* 状态标签错误态 */
-#trafficStatus.error {
+#trafficStatus.error,
+#firewallStatus.error {
   color: #dc2626;
 }
+
+/* 按钮组 */
+.btn-group {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* 危险按钮（删除、清空） */
+button.danger,
+button.btn-sm.danger {
+  color: #ffffff;
+  background: #dc2626;
+}
+
+/* 小号按钮（表格内） */
+button.btn-sm {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+/* 规则列表容器 */
+#rulesListContainer {
+  margin-top: 20px;
+}
+
+#rulesListContainer h3 {
+  font-size: 14px;
+  color: #475569;
+  margin: 0 0 8px 0;
+}
+
+/* 规则表格 */
+table.rules-table {
+  font-size: 13px;
+}
+
+table.rules-table td.extra-cell {
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* 规则动作染色 */
+.target-accept  { color: #16a34a; font-weight: 600; }
+.target-reject  { color: #ca8a04; font-weight: 600; }
+.target-drop    { color: #dc2626; font-weight: 600; }
 
