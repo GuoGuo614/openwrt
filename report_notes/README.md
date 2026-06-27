@@ -9,4 +9,3 @@
 - `ai_prompts.md`：AI 交互记录。
 - `setup_record.md`：OpenWrt 安装与网络配置记录。
 - `test_record.md`：各模块测试记录。
-- `screenshots.md`：截图索引与说明。

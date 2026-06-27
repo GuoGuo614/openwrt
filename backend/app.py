@@ -88,9 +88,8 @@ def run_firewall_script(args):
     安全调用防火墙脚本。
     使用 list 传参（非 shell 拼接），捕获 stdout / stderr / returncode。
     """
-    script_path = os.path.normpath(
-        os.path.join(os.path.dirname(__file__), FIREWALL_SCRIPT_PATH)
-    )
+    # FIREWALL_SCRIPT_PATH 已在 config.py 中解析为绝对路径
+    script_path = FIREWALL_SCRIPT_PATH
 
     if not os.path.isfile(script_path):
         return {
@@ -369,11 +368,15 @@ def main():
     server = HTTPServer((HOST, PORT), LabRequestHandler)
     server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     print(f"OpenWrt 网络实验后端已启动")
-    print(f"前端页面: http://{HOST}:{PORT}/")
-    print(f"接口列表: http://{HOST}:{PORT}/api")
-    print(f"流量数据源: {TRAFFIC_STATS_PATH}")
-    print(f"防火墙脚本: {FIREWALL_SCRIPT_PATH}")
-    print(f"静态文件目录: {STATIC_DIR}")
+    print(f"====================================")
+    print(f"路由器本地访问: http://{HOST}:{PORT}/")
+    print(f"电脑浏览器访问: http://<路由器LAN_IP>:{PORT}/")
+    print(f"  (例如 http://192.168.10.1:{PORT}/)")
+    print(f"接口列表:       http://<路由器IP>:{PORT}/api")
+    print(f"====================================")
+    print(f"流量数据源:     {TRAFFIC_STATS_PATH}")
+    print(f"防火墙脚本:     {FIREWALL_SCRIPT_PATH}")
+    print(f"静态文件目录:   {STATIC_DIR}")
     print(f"按 Ctrl+C 停止服务")
     try:
         server.serve_forever()
